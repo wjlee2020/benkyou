@@ -36,7 +36,7 @@ export function binarySearchWithRecursion(
   start = 0,
   end = list.length - 1
 ): number {
-  if (start > end) return -1;
+  if (start > end) return -1;  
 
   const mid = Math.floor((end + start) / 2);
   const comparison = compareFn(listItem, list[mid]);
@@ -93,3 +93,23 @@ export function binarySearchWithArraySplitting(
 
   return subIndex === -1 ? -1 : left + subIndex;
 }
+
+// two crystal balls problem; find where two crystal balls break and return the index as number
+export function twoCrystals(breaks: boolean[]): number {
+  const jumpAmount = Math.floor(Math.sqrt(breaks.length));
+
+  let i = jumpAmount;
+  for (; i < breaks.length; i += jumpAmount) {
+    if (breaks[i]) {
+      break;
+    }
+  }
+
+  i -= jumpAmount;
+  for (let j = 0; j < jumpAmount && i < breaks.length; ++j, ++i) {
+    if (breaks[i]) return i;
+  }
+
+  return -1;
+}
+
