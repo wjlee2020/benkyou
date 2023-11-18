@@ -106,6 +106,6 @@ describe("Find breaks for two crystals", () => {
 
     expect(twoCrystals(data)).toEqual(index);
     expect(twoCrystals(new Array(100).fill(false))).toEqual(-1);
-  })
-})
+  });
+});
 

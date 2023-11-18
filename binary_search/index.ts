@@ -94,7 +94,9 @@ export function binarySearchWithArraySplitting(
   return subIndex === -1 ? -1 : left + subIndex;
 }
 
-// two crystal balls problem; find where two crystal balls break and return the index as number
+/* two crystal balls problem; find where two crystal balls break and return the index as number
+ * jumping by 「sqrt」, so that it doesn't need to walk linearly O(n) vs O(sqrtN)
+*/
 export function twoCrystals(breaks: boolean[]): number {
   const jumpAmount = Math.floor(Math.sqrt(breaks.length));
 
