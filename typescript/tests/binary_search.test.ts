@@ -4,7 +4,7 @@ import {
   binarySearchWithRecursion,
   binarySearchWithTailRecursion,
   twoCrystals,
-} from "./binary_search";
+} from "../binary_search";
 import { describe, expect, test } from "bun:test";
 
 describe("Binary Search with loops", () => {
@@ -101,11 +101,10 @@ describe("Find breaks for two crystals", () => {
     const data = new Array(1000).fill(false);
 
     for (let i = index; i < data.length; ++i) {
-      data[i] = true; 
+      data[i] = true;
     }
 
     expect(twoCrystals(data)).toEqual(index);
     expect(twoCrystals(new Array(100).fill(false))).toEqual(-1);
   });
 });
-
