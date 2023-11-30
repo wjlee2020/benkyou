@@ -108,7 +108,7 @@ export function twoCrystals(breaks: boolean[]): number {
   }
 
   i -= jumpAmount;
-  for (let j = 0; j < jumpAmount && i < breaks.length; ++j, ++i) {
+  for (let j = 0; j <= jumpAmount && i < breaks.length; ++j, ++i) {
     if (breaks[i]) return i;
   }
 
